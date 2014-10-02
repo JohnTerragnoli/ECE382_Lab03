@@ -43,15 +43,20 @@ S4|	12|	INPUT|	0|	0|	Not used
 
 Configure the MSP430
 The following is a portion of the code that initializes the directions of the pins connecting the MSP430 to the Nokia 1202 display. Use the information from the previous question to identify the names of the registers missing in the following code (identified by the letters A - D). Put the register names in the table below.
+
+```
 mov.b    #LCD1202_CS_PIN|LCD1202_BACKLIGHT_PIN|LCD1202_SCLK_PIN|LCD1202_MOSI_PIN, & A
 mov.b    #LCD1202_CS_PIN|LCD1202_BACKLIGHT_PIN|LCD1202_SCLK_PIN|LCD1202_MOSI_PIN, & B
 mov.b    #LCD1202_RESET_PIN, & C
 mov.b    #LCD1202_RESET_PIN, & D
-Mystery Label	Register
-A	P1DIR
-B	P1OUT
-C	P2DIR
-D	P2OUT
+```
+
+Mystery Label|Register
+---|---
+A|	P1DIR
+B|	P1OUT
+C|	P2DIR
+D|	P2OUT
 
 Thought Process: 
 1)	The MOSI and the SCLK pins are both outputs, making it likely that the first two in the first line are also outputs.  There are on the first pin.  Therefore, they should set the direction of the first pin to be an output.  The reset button on the first line is also an output, therefore, it would make sense it would be outputted.  
