@@ -26,14 +26,8 @@ a. All of the outputs will then be outputting data, this is represented by a 1 i
 
 
 
-|Name | Pin# | Type | PxDIR | PxREN | PxOUT|
+Name | Pin# | Type | PxDIR | PxREN | PxOUT
 |--- | --- | --- | --- | --- | ---|
-| sd | sd | sd | sd | sd | sd |
-| sd | sd | sd | sd | sd | sd |
-
-
-
-
 GND	|20|	Power|	-|	-|	-|
 RST|	8|	OUTPUT|	1|	0|	Information sent
 P1.4|	6|	OUTPUT|	1|	0|	Information sent
