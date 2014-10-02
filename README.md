@@ -24,9 +24,9 @@ b.	However the inputs must be pullup resistors, as shown on the Nokia Schematic 
 a. All of the outputs will then be outputting data, this is represented by a 1 in the PxOUT column.  The inputs will choose one so that they can be pull up resistors.  
 
 
-Name|Pin#|Type|PxDIR|PxREN|PxOUT
---|--|--|--|--|--
-sd|sd|sd|sd|sd|sd
+|Name | Pin# | Type | PxDIR | PxREN | PxOUT|
+|-|-|-|-|-|-|
+|sd|sd|sd|sd|sd|sd|
 
 
 
