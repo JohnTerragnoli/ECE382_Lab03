@@ -9,31 +9,33 @@ Nokia1202 LCD BoosterPack v4-5
 Look at the schematic for the Nokia1202 LCD BoosterPack. Complete the following table. The pin number should be the pin number that signal connects to on the MSP 430. You may need to examine page 3 of the MSP430 Data Sheet. The type is from the perspective of the MSP430 and is one of the following: input, output, or power . For example, the RST' line should be listed as having an output type because it is an output from the MSP430 (to an input on the Nokia 1202). For input and output types (do nothing further with power), list their bit settings in the three registers listed (see pages 328 and 329 of the MSP430g2553 User's Guide). 
 
 Thought Process: 
-1)	For Pin#, page three was consulted.  
-a.	For GND, there was no direct label.  I then looked at DVCC and DVSS caught my eye since they are usually associated with power.  I look them up, and apparently DVCC and DVSS are usually the high and low input voltages, respectively.  This made since, so I decided to assume that GND was the same as VCSS.  
-b.	Also, I realized that the chart on page 3 of the MSP430 data sheet corresponds to the LaunchPad headers on the Nokia information sheet.  GND on the Nokia matches up with pin 20 on the data sheet.  
-c.	In class, Captain Trimble mentioned that SIMO and MOSI  are the same thing.  I could not find MOSI, but I could find SIMO on pin 15.  Therefore, this was the pin that was used.  Also, MOSI is labeled on the Nokia data sheet as pin 6, which matches up with pin 20 on the MSP430 data sheet.  Success.  
-d.	SCLK and VCC both match up with pins on the Nokia spreadsheet and the MSP430 sheet. 
-e.	S1-S4: Since Port 1 was an output, I figured it would make sense to make port 2 be an input.  I also figured that the inputs would be clumped together for simplicity.  The Most viable pin numbers were then 9-12, or P2.1-P2.4.  This also makes sense because the numbers 1-4 would correspond to the numbers S1-S4.  Also, S1-S4 is labeled in the left chart on the Nokia datasheet (Is this a valid reasoning process?).  
-2)	PxDIR
-a.	Looking at page 329 of the MSP430 Family User Guide, PxDIR designate if the pin is an input or an output.  0 designates and input and 1 designates and output.  The following bits were then assigned in the table corresponding with this rule.  Obviously, power types were not assigned bits.  
-3)	PxREN
-a.	From page 329 of the MSP430 Family User Guide, PxREN enables/disables the pull up/pulldown resistors.  In order for data to flow through the outout, the pull up/down resistors must be disabled. To do this, PxREN needs to be a zero.  Therefore, it would make sense to choose 0 for the PxREN for the outputs. 
+1. For Pin#, page three was consulted.  
+a. For GND, there was no direct label.  I then looked at DVCC and DVSS caught my eye since they are usually associated with power.  I look them up, and apparently DVCC and DVSS are usually the high and low input voltages, respectively.  This made since, so I decided to assume that GND was the same as VCSS.  
+b. Also, I realized that the chart on page 3 of the MSP430 data sheet corresponds to the LaunchPad headers on the Nokia information sheet.  GND on the Nokia matches up with pin 20 on the data sheet.  
+c. In class, Captain Trimble mentioned that SIMO and MOSI  are the same thing.  I could not find MOSI, but I could find SIMO on pin 15.  Therefore, this was the pin that was used.  Also, MOSI is labeled on the Nokia data sheet as pin 6, which matches up with pin 20 on the MSP430 data sheet.  Success.  
+d. SCLK and VCC both match up with pins on the Nokia spreadsheet and the MSP430 sheet. 
+e. S1-S4: Since Port 1 was an output, I figured it would make sense to make port 2 be an input.  I also figured that the inputs would be clumped together for simplicity.  The Most viable pin numbers were then 9-12, or P2.1-P2.4.  This also makes sense because the numbers 1-4 would correspond to the numbers S1-S4.  Also, S1-S4 is labeled in the left chart on the Nokia datasheet (Is this a valid reasoning process?).  
+2. PxDIR
+a. Looking at page 329 of the MSP430 Family User Guide, PxDIR designate if the pin is an input or an output.  0 designates and input and 1 designates and output.  The following bits were then assigned in the table corresponding with this rule.  Obviously, power types were not assigned bits.  
+3. PxREN
+a. From page 329 of the MSP430 Family User Guide, PxREN enables/disables the pull up/pulldown resistors.  In order for data to flow through the outout, the pull up/down resistors must be disabled. To do this, PxREN needs to be a zero.  Therefore, it would make sense to choose 0 for the PxREN for the outputs. 
 b.	However the inputs must be pullup resistors, as shown on the Nokia Schematic in the data sheet.  Also, inputs are active low.  Therefore, when the button is not pressed then there is a pull up resistor for each input.  
-4)	PxOUT
-a.	All of the outputs will then be outputting data, this is represented by a 1 in the PxOUT column.  The inputs will choose one so that they can be pull up resistors.  
-5)	These last two letters actually go against my intuition, however, Dr. Coulston said that this was correct.  
-Name	Pin#	Type	PxDIR	PxREN	PxOUT
-GND	20	Power	-	-	-
-RST	8	OUTPUT	1	0	Information sent
-P1.4	6	OUTPUT	1	0	Information sent
-MOSI	15	OUTPUT	1	0	Information sent
-SCLK	7	OUTPUT	1	0	Information sent
-VCC	1	POWER	-	-	-
-S1	9	INPUT	0	0	Not used
-S2	10	INPUT	0	0	Not used
-S3	11	INPUT	0	0	Not used
-S4	12	INPUT	0	0	Not used
+4. PxOUT
+a. All of the outputs will then be outputting data, this is represented by a 1 in the PxOUT column.  The inputs will choose one so that they can be pull up resistors.  
+
+
+Name|	Pin#|	Type|	PxDIR|	PxREN	|PxOUT
+------------------------------------------------
+GND	|20|	Power|	-|	-|	-|
+RST|	8|	OUTPUT|	1|	0|	Information sent
+P1.4|	6|	OUTPUT|	1|	0|	Information sent
+MOSI|	15|	OUTPUT|	1|	0|	Information sent
+SCLK|	7|	OUTPUT|	1|	0|	Information sent
+VCC|	1|	POWER|	-|	-|	-|
+S1|	9|	INPUT|	0|	0|	Not used
+S2|	10|	INPUT|	0|	0|	Not used
+S3|	11|	INPUT|	0|	0|	Not used
+S4|	12|	INPUT|	0|	0|	Not used
 
 
 
