@@ -204,6 +204,14 @@ Symbolic Constant	Hex	Function
 
 (This marks the end of the Mega Prelab.)
 
+
+#Logic Analyzer
+##Physical Communication
+
+
+##Functionality
+
+
 Documentation: 
 We all helped each other understand the concepts in the homework Sunday night.  
 C2C Nathan Ruprecht, C2C Erik Thompson, C2C Austin Bolinger, C2C Sabin Park, C2C Kyle Jonas, C2C Jeremy Gruszka, C2C Kevin Cabusora, C2C Taylor Bodin, C2C Jarrod Wooden, C2C Sean Bapty, C2C Erica Lewandowski, and C2C Chris Kiernan.   
