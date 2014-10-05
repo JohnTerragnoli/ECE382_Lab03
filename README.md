@@ -217,6 +217,15 @@ Symbolic Constant	Hex	Function
 #Logic Analyzer
 ##Physical Communication
 
+|Line|R12|R13|Purpose|
+|---|---|---|---|
+|||||
+|||||
+|||||
+|||||
+|||||
+
+
 
 ##Functionality
 
