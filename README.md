@@ -225,22 +225,30 @@ Complete the following table by finding the 4 calls to writeNokiaByte that gener
 |3|bis.b	#LCD1202_SCLK_PIN, &P1OUT|nothing|setting the positive edge of the clock|making the high of the clock wave|
 |4|bic.b	#LCD1202_SCLK_PIN, &P1OUT|nothing|clearing the negative edge of the clock|aking the low of the clock wave|
 
+|Number|Line|R12|R13|Purpose|
+|---|---|---|---|---|
+|1||||
+|2||||
+|3||||
+|4||||
+
+
 *Getting Started*
 First, to do this, each of the subroutines were examined for their ultimate purpose.
 1. Init: 
 -Sets up a fast clock.  
 -Sets the inputs and the outputs.
 -makes the reset pin an output
---ensures pull up resistors
+-ensures pull up resistors
 -
 
 2. InitNokia
 -allows the screen to turn on? 
 3. Clear Display
--
+
 4. Set Address
 -sets the address of where we're writing to. 
--
+
 5. writeNokiaByte
 -enables the I/O function by clearing. 
 -writes the new command to the Nokia, sends it through the MSP430 output. 
