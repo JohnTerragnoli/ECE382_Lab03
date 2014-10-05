@@ -227,10 +227,10 @@ Complete the following table by finding the 4 calls to writeNokiaByte that gener
 
 |Number|Line|R12|R13|Purpose|
 |---|---|---|---|---|
-|1||||getting a new input|
-|2||||getting a new input|
-|3||||getting a new input|
-|4||||making the low of the clock wave|
+|1||setting the command|nothing|getting a new input|
+|2||clearing the command|nothing|getting a new input|
+|3||nothing|setting the positive edge of the clock|getting a new input|
+|4||nothing|clearing the negative edge of the clock|making the low of the clock wave|
 
 
 *Getting Started*
