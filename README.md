@@ -217,13 +217,40 @@ Symbolic Constant	Hex	Function
 #Logic Analyzer
 ##Physical Communication
 
-|Line|R12|R13|Purpose|
-|---|---|---|---|
-|||||
-|||||
-|||||
-|||||
-|||||
+Complete the following table by finding the 4 calls to writeNokiaByte that generate the data sent to the LCD display to draw the veritcal bar.  
+|Number|Line|R12|R13|Purpose|
+|---|---|---|---|---|
+|1|bic.b	#LCD1202_MOSI_PIN, &P1OUT|setting the command|nothing|getting a new input|
+|2|bic.b	#LCD1202_MOSI_PIN, &P1OUT|clearing the command|nothing|re writting the same input|
+|3|bis.b	#LCD1202_SCLK_PIN, &P1OUT|nothing|setting the positive edge of the clock|making the high of the clock wave|
+|4|bic.b	#LCD1202_SCLK_PIN, &P1OUT|nothing|clearing the negative edge of the clock|aking the low of the clock wave|
+
+*Getting Started*
+First, to do this, each of the subroutines were examined for their ultimate purpose.
+1. Init: 
+-Sets up a fast clock.  
+-Sets the inputs and the outputs.
+-makes the reset pin an output
+--ensures pull up resistors
+-
+
+2. InitNokia
+-allows the screen to turn on? 
+3. Clear Display
+-
+4. Set Address
+-sets the address of where we're writing to. 
+-
+5. writeNokiaByte
+-enables the I/O function by clearing. 
+-writes the new command to the Nokia, sends it through the MSP430 output. 
+-also outputs the clock to the Nokia
+
+The subroutines above were the most important to understand for this section of the lab.  
+
+*Thought Process*
+1.   
+
 
 
 
