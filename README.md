@@ -218,12 +218,6 @@ Symbolic Constant	Hex	Function
 ##Physical Communication
 
 Complete the following table by finding the 4 calls to writeNokiaByte that generate the data sent to the LCD display to draw the veritcal bar.  
-|Number|Line|R12|R13|Purpose|
-|---|---|---|---|---|
-|1|bic.b	#LCD1202_MOSI_PIN, &P1OUT|setting the command|nothing|getting a new input|
-|2|bic.b	#LCD1202_MOSI_PIN, &P1OUT|clearing the command|nothing|getting a new input|
-|3|bis.b	#LCD1202_SCLK_PIN, &P1OUT|nothing|setting the positive edge of the clock|getting a new input|
-|4|bic.b	#LCD1202_SCLK_PIN, &P1OUT|nothing|clearing the negative edge of the clock|making the low of the clock wave|
 
 |Number|Line|R12|R13|Purpose|
 |---|---|---|---|---|
