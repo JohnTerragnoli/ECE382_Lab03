@@ -254,6 +254,14 @@ The subroutines above were the most important to understand for this section of 
 1.   
 
 
+##SW3 Logic Waveforms
+|Line|Command/Data|8-bit Packet|
+|---|---|---|
+||||
+||||
+||||
+||||
+
 
 
 ##Functionality
