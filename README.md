@@ -269,6 +269,12 @@ The operations AND, OR, and XOR were done on the images below.  A black square i
 
 
 #Functionality
+##Required Functionality
+This creates a block on the LCD that is 8x8 pixels.  The location of the block is passed into the subroutine via r12 and r13.
+
+
+##A Functionality
+This moves the 8-pixel block one block in the direction of the pressed button (up, down, left, right).
 
 
 Documentation: 
