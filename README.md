@@ -263,6 +263,7 @@ The subroutines above were the most important to understand for this section of 
 ||||
 
 ##Writing Modes
+The operations AND, OR, and XOR were done on the images below.  A black square is a 1 and a blank square is a zero. When an image is compared with another image using one of the three operations just mentioned, each corresponding bit undergoes the same operation.  The result is then stored in a corresponding chart on a third grid.  
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/bitblock.bmp  "Writing Mode Answers")
 
 
