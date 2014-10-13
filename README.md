@@ -262,9 +262,12 @@ The subroutines above were the most important to understand for this section of 
 ||||
 ||||
 
+##Writing Modes
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/bitblock.bmp  "Writing Mode Answers")
 
 
-##Functionality
+
+#Functionality
 
 
 Documentation: 
