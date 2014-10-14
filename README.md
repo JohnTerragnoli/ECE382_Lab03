@@ -285,8 +285,9 @@ This creates a block on the LCD that is 8x8 pixels.  The location of the block i
 
 The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Creates%20Block.asm)
 
-A screenshot of the code in action is shown below: 
 
+A screenshot of the code in action is shown below: 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/One%20Brick.JPG "Required Functionality")
 
 ##A Functionality
 This moves the 8-pixel block one block in the direction of the pressed button (up, down, left, right).
