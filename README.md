@@ -267,7 +267,7 @@ The waveform from the logic analyzer can be seen below.  This was attained from 
 
 The data signal "My Bus 1[0]" is exactly the same as in the example.  
 
-After this was done, the RESET signal was added and the reset button was hit.  This waveform can be shown below: 
+After this was done, the RESET signal was added and the reset button was hit.  To hook up the RESET signal, the third pin was attached to in P2.0.  This is because the reset signal is attached to this pin, as seen on the Nokia data sheet [here](http://www.ece382.com/datasheets/Nokia_1202_LCD_BoosterPack_v4-5.pdf).  This waveform can be shown below: 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/With%20Reset.JPG "Writing Mode Answers")
 
 Also, the RESET signal was added and the SW3 button was hit. This can be seen below. 
