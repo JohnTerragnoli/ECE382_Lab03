@@ -267,11 +267,10 @@ The waveform from the logic analyzer can be seen below.  This was attained from 
 
 The data signal "My Bus 1[0]" is exactly the same as in the example.  
 
-After this was done, the RESET signal was added and the reset button was hit.  To hook up the RESET signal, the third pin was attached to in P2.0.  This is because the reset signal is attached to this pin, as seen on the Nokia data sheet [here](http://www.ece382.com/datasheets/Nokia_1202_LCD_BoosterPack_v4-5.pdf).  This waveform can be shown below: 
+After this was done, the RESET signal was added and the reset button was hit.  To hook up the RESET signal, the third pin was attached to in P2.0.  This is because the reset signal is attached to this pin, as seen on the Nokia data sheet [here](http://www.ece382.com/datasheets/Nokia_1202_LCD_BoosterPack_v4-5.pdf).  The trigger for the reset signal was set to active low.  This waveform can be shown below: 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/With%20Reset.JPG "Writing Mode Answers")
 
-Also, the RESET signal was added and the SW3 button was hit. This can be seen below. 
-![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/With%20Reset.JPG "Writing Mode Answers")
+There should be change, or edge when this is done.  The length of time that the active low was then held down is measured.  
 
 ##Writing Modes
 The operations AND, OR, and XOR were done on the images below.  A black square is a 1 and a blank square is a zero. When an image is compared with another image using one of the three operations just mentioned, each corresponding bit undergoes the same operation.  The result is then stored in a corresponding chart on a third grid.  
