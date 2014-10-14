@@ -262,7 +262,7 @@ The subroutines above were the most important to understand for this section of 
 ||||
 ||||
 
-The waveform from the logic analyzer can be seen below.  This was attained from running Dr. Coulston's code and clicking "single run" while the SW3 button was hit and released.  
+The waveform from the logic analyzer can be seen below.  This was attained from running Dr. Coulston's code and clicking "single run" while the SW3 button was hit and released.  This was done for a rising edge, even though this information was not displayed on the screen.  
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Plain%20Screenshot.JPG "Plain Screenshot")
 
 The data signal "My Bus 1[0]" is exactly the same as in the example.  
