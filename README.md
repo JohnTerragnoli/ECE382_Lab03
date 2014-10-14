@@ -293,10 +293,10 @@ A screenshot of the code in action is shown below:
 This moves the 8-pixel block one block in the direction of the pressed button (up, down, left, right).
 
 
-Documentation: 
-Prelab: 
+#Documentation: 
+###Prelab: 
 We all helped each other understand the concepts in the homework Sunday night.  
 C2C Nathan Ruprecht, C2C Erik Thompson, C2C Austin Bolinger, C2C Sabin Park, C2C Kyle Jonas, C2C Jeremy Gruszka, C2C Kevin Cabusora, C2C Taylor Bodin, C2C Jarrod Wooden, C2C Sean Bapty, C2C Erica Lewandowski, and C2C Chris Kiernan.   
 C2C Sabin Park and I were talking and he said he had EI with Dr. Coulston.  He said that the inputs are active low and that therefore to give them a zero is thus enabling them to set their pull up/down resistors.  Park and I also discussed how the waveform was going to constantly decrement and where the waveforms should change in relation to the clock.  We came to the conclusion that it would occur on the falling edge.  
 
-Rest of Lab: 
+###Rest of Lab: 
