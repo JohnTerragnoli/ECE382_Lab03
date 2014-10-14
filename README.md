@@ -267,6 +267,12 @@ The waveform from the logic analyzer can be seen below.  This was attained from 
 
 The data signal "My Bus 1[0]" is exactly the same as in the example.  
 
+After this was done, the RESET signal was added and the reset button was hit.  This waveform can be shown below: 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/With%20Reset.JPG "Writing Mode Answers")
+
+Also, the RESET signal was added and the SW3 button was hit. This can be seen below. 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/With%20Reset.JPG "Writing Mode Answers")
+
 ##Writing Modes
 The operations AND, OR, and XOR were done on the images below.  A black square is a 1 and a blank square is a zero. When an image is compared with another image using one of the three operations just mentioned, each corresponding bit undergoes the same operation.  The result is then stored in a corresponding chart on a third grid.  
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/bitblock.bmp  "Writing Mode Answers")
