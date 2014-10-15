@@ -279,6 +279,8 @@ The information sent in the packet is 0001 0000, which translates to 0x10, the e
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%204.JPG "Packet 4")
 The information sent in the pack is 0000 0001. This is not 0x0F.  However, since the most significant nibble is used to keep track of the columns, this value does not play much significance.  
 
+Notice: The CS signal was not included in these waveforms.  This is because it is obvious that the signal will drop low to allow the MSP to interact with the Nokia.  It was excluded to save space.  
+
 
 ##SW3 Logic Waveforms
 This compiles the values show in the data packets shown above:
@@ -345,6 +347,8 @@ A video demonstration for required functionality can be seen [here](https://driv
 ##A Functionality
 This moves the 8-pixel block one block in the direction of the pressed button (up, down, left, right).  The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/A%20Functionality.txt).
 A video demonstration for A functionality can be seen [here](https://drive.google.com/file/d/0Bymb7kjtbzuqVmNRRFdWYXNPSU0/view?usp=sharing).
+
+*Basic and A Functionality were both completed and supervised by Captain Trimble on 15 October 2014*
  
 #Documentation: 
 ###Prelab: 
@@ -353,4 +357,5 @@ C2C Nathan Ruprecht, C2C Erik Thompson, C2C Austin Bolinger, C2C Sabin Park, C2C
 C2C Sabin Park and I were talking and he said he had EI with Dr. Coulston.  He said that the inputs are active low and that therefore to give them a zero is thus enabling them to set their pull up/down resistors.  Park and I also discussed how the waveform was going to constantly decrement and where the waveforms should change in relation to the clock.  We came to the conclusion that it would occur on the falling edge.  
 
 ###Rest of Lab: 
-At first I was almost able to get A functionality, except the square would leave a trail and commands were delayed.  C2C Erik Thompson pointed out that this was most likely due to how disorganized my code was.  He suggested that I create a subroutine to create the brick.  He then said it is best to test for each button beign pressed and then have a single loop for when a button was pressed down.  I reorganized my code the way he did and it solved both of my problems.  
+At first I was almost able to get A functionality, except the square would leave a trail and commands were delayed.  C2C Erik Thompson pointed out that this was most likely due to how disorganized my code was.  He suggested that I create a subroutine to create the brick.  He then said it is best to test for each button beign pressed and then have a single loop for when a button was pressed down.  I reorganized my code the way he did and it solved both of my problems.  He's a great guy.  
+Captain Trimble explained to me that the fourth packet of information sent to the Nokia was part of the column address and that the value mentioned in the original code (0x0F) was a value to be ANDed with the specific address to ensure that the first four bits were all zero and that the rest of the data did not change.  I thought this was pretty cool.  
