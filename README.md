@@ -280,6 +280,34 @@ The information sent in the packet is 0001 0000, which translates to 0x10, the e
 The information sent in the pack is 0000 0001. This is not 0x0F.  However, since the most significant nibble is used to keep track of the columns, this value does not play much significance.  
 
 
+##SW3 Logic Waveforms
+This compiles the values show in the data packets shown above:
+|Line|Command/Data|8-bit Packet|
+|---|---|---|
+|66|DATA|0xE7|
+|276|COMMAND|0xB1|
+|288|COMMAND|0x10|
+|294|COMMAND|0x01|
+
+**Why are these values different?** (than those in the second table above?
+1. For line 66, the data sent was exactly as expected!!
+2. The second packet of information is supposed to hold the row of where we will write to the LCD.  More specifically, the most significant nibble is the a masking function, which is ignored for now, and the least significant nibble contains the row address.  This can be seen in the table form the datasheet below these responses.  Anyway, the location 1 most likely was sent because the row the computer was writing to at that time was 0001, not 0000.  Either way, this output makes sense.  
+3. The 
+
+
+
+Table for rows and columns:  
+
+
+
+
+
+
+
+
+
+
+
 
 After the SW3 button was analyzed, the RESET signal was.  To do this the trigger for RESET was changed to falling edge and the trigger for the clock was changed to "don't care".  This is because the reset button is an active low.  A close up of the screenshot is shown below: 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Reset%20Close%20Up.JPG "Reset up Close")
