@@ -230,7 +230,7 @@ Complete the table below. To answer this question you will have to use some comm
 #Logic Analyzer
 ##Physical Communication
 
-Complete the following table by finding the 4 calls to writeNokiaByte that generate the data sent to the LCD display to draw the veritcal bar.  
+Complete the following table by finding the 4 calls to writeNokiaByte that generate the data sent to the LCD display to draw the veritcal bar.  This was done with this [original code](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Original.txt).
 
 ###Four Calls to writeNokiaByte:
 
@@ -299,14 +299,14 @@ The operations AND, OR, and XOR were done on the images below.  A black square i
 ##Required Functionality
 This creates a block on the LCD that is 8x8 pixels.  The location of the block is passed into the subroutine via r12 and r13.
 
-The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Creates%20Block.asm)
+The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Basic%20Functionality.asm)
 
 
 A screenshot of the code in action is shown below: 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/One%20Brick.JPG "Required Functionality")
 
 ##A Functionality
-This moves the 8-pixel block one block in the direction of the pressed button (up, down, left, right).
+This moves the 8-pixel block one block in the direction of the pressed button (up, down, left, right).  The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/A%20Functionality.txt).
 
 
 #Documentation: 
