@@ -364,6 +364,16 @@ This moves the 8-pixel block one block in the direction of the pressed button (u
 A video demonstration for A functionality can be seen [here](https://drive.google.com/file/d/0Bymb7kjtbzuqVmNRRFdWYXNPSU0/view?usp=sharing).
 
 *Basic and A Functionality were both completed and supervised by Captain Trimble on 15 October 2014*
+
+Work Process to Achieve A Functionality:
+1. First, I tried to create some lines of code that would detect when a certain button was hit.  To do this, I wrote a few lines of code using the command "bit.b" and had the program jump into an infinite loop if a certain button was hit.  This worked rather well.  In order to do this, I had to realize which numbers to use to check if a certain button was pressed.  This can be determined from Dr. Coulston's original code, where each SW button represents a certain bit in the signal.  
+2. I then tried to update the registers r10 and r11 to move where the location of the box is being drawn. After some trial and error, I discovered the correct numbers to add to the location for each of the cardinal directions. 
+3. When I tried to test this, however, the box seemed to jump sporatically within that same cardinal direction.  I asked Erik Thompson and he said this was because I did not create a loop to ensure that it does not jump when the button is continued to be pressed down.  Therefore, methods for when a button was pressed down and when it was released for was created to ensure that the box only moved for each click.  
+4. Around this point is when I created the "createBrick" subroutine to make my code more readable.  Then it just had to be called in the looping pair to draw another box.  
+5. At first I had a loop for ever possible clicking opition.  Then, it became apparent that this is not necessary and I rid my code of it.  Instead, I used a single pair of loops, in which the value of one of the number used to check which button was pressed down was stored in a register and also used to decide when the button was released.  The code then continuously checked if either of the four buttons were pressed down and made the LCD respond appropriately.
+6. Once I got it moving, I had to get rid of the "slug" trail left behind.  I looked through the code to find something useful and realized when the program is first being set up, a function called "clearDisplay" was used.  
+7. I experimented with where to put the clearDisplay function.  I tried it numberous other places, but it kept erasing everything form the screen so that a block would only flash on the LCD and then reset to the beginning.  I kept trying different places until I placed it in the loop pair, and then it worked well.  It took a lot of frustrating trials and errors.
+8. Once this was finished A Functionality was achieved!!!! :) 
  
 #Documentation: 
 ###Prelab: 
