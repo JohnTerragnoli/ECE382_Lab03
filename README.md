@@ -59,27 +59,35 @@ C|	P2DIR
 D|	P2OUT
 
 Thought Process: 
-1)	The MOSI and the SCLK pins are both outputs, making it likely that the first two in the first line are also outputs.  There are on the first pin.  Therefore, they should set the direction of the first pin to be an output.  The reset button on the first line is also an output, therefore, it would make sense it would be outputted.  
-2)	To apply this concept the direction of the signals must be specified, which is done in the P1DIR and P2DIR steps.  The P1OUT and P2OUT steps then open the output to whatever signals would like to pass through.  
+1. The MOSI and the SCLK pins are both outputs, making it likely that the first two in the first line are also outputs.  There are on the first pin.  Therefore, they should set the direction of the first pin to be an output.  The reset button on the first line is also an output, therefore, it would make sense it would be outputted.  
+2. To apply this concept the direction of the signals must be specified, which is done in the P1DIR and P2DIR steps.  The P1OUT and P2OUT steps then open the output to whatever signals would like to pass through.  
+3. 
 The following initializes the SPI subsystem of the MSP430. For each of the bits listed in the table below, identify how the code-snippet configures that pin and what function is realized by that setting. For example, setting the UCMSB bit of the UCB0CTL0 register forces the SPI subsystem to output the bits starting from the LSB. Also, list the bit position that each occupies in its associated register.
+
+```
     bis.b    #UCCKPH|UCMSB|UCMST|UCSYNC, &UCB0CTL0
     bis.b    #UCSSEL_2, &UCB0CTL1
     bic.b    #UCSWRST, &UCB0CTL1
-ID	Bit	Function as set in the Code
-UCCKPH	7 (set to 1)	Clock phase select: Data is captured on the first UCLK edge and changed on the following edge
-UCMSB	5 (set to 1)	MSB first select. Controls the direction of the receive and transmit shift register.
-MSB first
-UCMST	3 (set to 1)	Master Mode Select: Master mode chosen. 
-UCSYNCH	0 (set to 1)	Synchronous mode enabled; 
-Synchronous mode selected.
-UCSSEL_2	6-7 (set to 11)	Select SMCLK as CLK in master mode
-UCSWRST	0 (set to 0)	Software reset enable
+```
+
+|ID	|Bit|	Function as set in the Code|
+|---|---|---|
+|UCCKPH	|7 (set to 1)|	Clock phase select: Data is captured on the first UCLK edge and changed on the following edge|
+|UCMSB	|5 (set to 1)|	MSB first select. Controls the direction of the receive and transmit shift register.MSB first|
+|UCMST|	3 (set to 1)|	Master Mode Select: Master mode chosen. |
+|UCSYNCH	|0 (set to 1)|	Synchronous mode enabled; Synchronous mode selected.|
+|UCSSEL_2|	6-7 (set to 11)	|Select SMCLK as CLK in master mode|
+|UCSWRST|	0 (set to 0)|	Software reset enable|
+
 Disabled. USCI reset released for operation.
 Thought Process:   
-1) Just looked at the MSP430 Family User Guide on page 445.  Copied down that occurred based on if the specific bits were set or cleared.  
-Communicate to the Nokia1202 display
-The following code communicates one byte to the Nokia 1202 display using its 9-bit protocol. Use this code to draw a timing diagram of the expected behavior of LCD1202_CS_PIN, LCD1202_SCLK_PIN, LCD1202_MOSI_PINs from the begining of this subroutine to the end. Make sure that you clearly show the relationship of the edges in the clk and data waveforms.
 
+1. Just looked at the MSP430 Family User Guide on page 445.  Copied down that occurred based on if the specific bits were set or cleared.  
+
+
+*Communicate to the Nokia1202 display*
+The following code communicates one byte to the Nokia 1202 display using its 9-bit protocol. Use this code to draw a timing diagram of the expected behavior of LCD1202_CS_PIN, LCD1202_SCLK_PIN, LCD1202_MOSI_PINs from the begining of this subroutine to the end. Make sure that you clearly show the relationship of the edges in the clk and data waveforms.
+```
 ;-------------------------------------------------------------------------------
 ;    Name:        writeNokiaByte
 ;    Inputs:        R12 selects between (1) Data or (0) Command string
@@ -87,6 +95,7 @@ The following code communicates one byte to the Nokia 1202 display using its 9-b
 ;    Outputs:    none
 ;    Purpose:    Write a command or data byte to the display using 9-bit format
 ;-------------------------------------------------------------------------------
+
 writeNokiaByte:
 
     push    R12
@@ -125,11 +134,12 @@ pollSPI:
     pop        R12
 
     ret
+```
 Configure the Nokia1202 display
 The following code configures the Nokia 1202 display to display pixels. The code consists of two main areas. The first section holds the reset line low and then high for a specific length of time. You will measure the duration of the reset pulse later in the lab. 
 
 The second section sends a sequence of commands to the Nokia 1202 display. Your task is to use the information on page 42 (and beyond) of the STE2007 technical document to decode the symbolic constants moved into register R13 on the lines marked with "DECODE HERE".
-I’m sorry this is a pathetic excuse to try and understand what’s going on.  
+```
 ;-------------------------------------------------------------------------------
 ;    Name:        initNokia        68(rows)x92(columns)
 ;    Inputs:        none
@@ -201,15 +211,17 @@ delayNokiaResetHigh:
     pop    R12
 
     ret
+```
 Complete the table below. To answer this question you will have to use some common sense in decoding the meaning of the symbolic constants.
-(looked up these values on page 41 of STE2007
-Symbolic Constant	Hex	Function
-#STE2007_RESET	E2	Internal Reset
-#STE2007_DISPLAYALLPOINTSOFF	A4	LCDdisplay, normal display
-#STE2007_POWERCONTROL	Blank	Sets the on–chip power supply circuit operating mode
-#STE2007_POWERCTRL_ALL_ON	2F	Booster, voltage regulator, voltage follower all on
-#STE2007_DISPLAYNORMAL	A6	LCD Display
-#STE2007_DISPLAYON	AF	Display on
+(looked up these values on page 41 of STE2007)
+
+|Symbolic Constant|	Hex	|Function|
+|#STE2007_RESET|	E2	|Internal Reset|
+|#STE2007_DISPLAYALLPOINTSOFF|	A4|	LCDdisplay, normal display|
+|#STE2007_POWERCONTROL|	Blank|	Sets the on–chip power supply circuit operating mode|
+|#STE2007_POWERCTRL_ALL_ON|	2F	|Booster, voltage regulator, voltage follower all on|
+|#STE2007_DISPLAYNORMAL|	A6|	LCD Display|
+|#STE2007_DISPLAYON	|AF	|Display on|
 
 (This marks the end of the Mega Prelab.)
 
