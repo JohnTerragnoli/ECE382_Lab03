@@ -287,7 +287,9 @@ After the SW3 button was analyzed, the RESET signal was.  To do this the trigger
 A screenshot was then taken of from farther out so that the time the reset was actively low could be measured.  
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Reset%20Measure.JPG "Reset up Close")
 
-As evident from the screenshot above, the reset signal was low for about 18.64us.  It is hard to tell but at the M2 marker is when the reset signal changes.  It happens so quickly, compared to the length of time recorded, that its change can hardly be seen without zooming in.  That is the reason for the first picture.  
+As evident from the screenshot above, the reset signal was low for about 18.64ms.  It is hard to tell but at the M2 marker is when the reset signal changes.  It happens so quickly, compared to the length of time recorded, that its change can hardly be seen without zooming in.  That is the reason for the first picture.  
+
+The number of loops between these points is 0xFFFF.  This is because 0xFFFF is the counter used starting at line 94, which is the number of times that the program will run through the code.  Therefore, the length of each iteration of the loop will be (0.01864/0xFFFF) or (0.01864/65535) = 284.4ns.  
 
 How many counts does the firmware loop count down from? 18.64us
 Amount of time in each iteration of the delay loop: 
