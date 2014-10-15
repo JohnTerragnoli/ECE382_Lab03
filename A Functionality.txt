@@ -5,6 +5,13 @@
 ;	Draw a new vertical bar on the Nokia 1202 display everytime that SW3
 ;	is pressed and released.
 ;-------------------------------------------------------------------------------
+;	Edited by John Paul Terragnoli
+;	14 October 2014
+;	MSP430G2553
+;	This will draw a block on the LCD screen, which can be moved around by
+;	the directional buttons.
+;-------------------------------------------------------------------------------
+
 	.cdecls C,LIST,"msp430.h"		; BOILERPLATE	Include device header file
 
 
@@ -22,6 +29,15 @@ STE2007_POWERCONTROL:			.equ	0x28
 STE2007_POWERCTRL_ALL_ON:		.equ	0x07
 STE2007_DISPLAYNORMAL:			.equ	0xA6
 STE2007_DISPLAYON:				.equ	0xAF
+
+UPCHECK:			.equ		0x20
+DOWNCHECK:			.equ		0x10
+LEFTCHECK:			.equ		0x04
+SHIFTHORIZONTAL:	.equ		0x08
+RIGHTCHECK:			.equ		0x02
+checkPress:			.equ		r15
+counter: 			.equ		r14
+
 
  	.text								; BOILERPLATE	Assemble into program memory
 	.retain								; BOILERPLATE	Override ELF conditional linking and retain current section
@@ -59,44 +75,45 @@ main:
 
 ;RESPONDS THE UP BUTTON
 moveUp:
-	bit.b	#0x20, &P2IN  ;this is a comparer to check what the number is coming into P2IN
+	bit.b	#UPCHECK, &P2IN  ;this is a comparer to check what the number is coming into P2IN
 	jnz		moveDown	;this jumps if the up button is not pressed.
-	mov		#0x20, r15  ;saving the operation performed so that we can check if it is released!!! Genius
+	mov		#UPCHECK, checkPress  ;saving the operation performed so that we can check if it is released!!! Genius
 	dec		r10			;this actually shifts the block upwards
 	jmp		buttonDown  ;go here until we know that the button has been released.
 
 
 ;RESPONDS TO DOWN BUTTON
 moveDown:
-	bit.b	#0x10, &P2IN
+	bit.b	#DOWNCHECK, &P2IN
 	jnz		moveLeft
-	mov		#0x10, r15
+	mov		#DOWNCHECK, checkPress
 	inc		r10			;increasing the number will push it lower on the screeen
 	jmp		buttonDown
 
 ;RESPONDS TO LEFT BUTTON
 moveLeft:
-	bit.b	#0x04, &P2IN
+	bit.b	#LEFTCHECK, &P2IN
 	jnz		moveRight
-	mov		#0x04, r15
-	sub		#0x08, r11			;increasing the number will push it lower on the screeen
+	mov		#LEFTCHECK, checkPress
+	sub		#SHIFTHORIZONTAL, r11			;increasing the number will push it lower on the screeen
 	jmp		buttonDown
 
 
 ;RESPONDS TO RIGHT BUTTON
 moveRight:
-	bit.b	#0x02, &P2IN
+	bit.b	#RIGHTCHECK, &P2IN
 	jnz		moveUp
-	mov		#0x02, r15
-	add		#0x08, r11			;increasing the number will push it lower on the screeen
+	mov		#RIGHTCHECK, checkPress
+	add		#SHIFTHORIZONTAL, r11			;increasing the number will push it lower on the screeen
 	jmp		buttonDown
 
 
 
 ;these are for any buttons!!!!!
-
+;makes sure that square only moves one space while the button is pushed down.
+;there needs to be a release before the block moves.
 buttonDown:
-	bit.b	r15, &P2IN
+	bit.b	checkPress, &P2IN
 	jz		buttonDown
 
 buttonUp:
@@ -341,7 +358,9 @@ setAddress:
 ;	Inputs:		R12		row
 ;				R13		col
 ;	Outputs:	block onto the LCD screen
-;	Purpose:	draws a 8 by 8 box with eight lines.
+;	Purpose:	draws a 8 by 8 box with eight lines.  It also replaced a lot of
+;				lines in the old while1 and while0 loops.  Writing those commands
+;				here made it easier for me to visualize.
 ;-------------------------------------------------------------------------------
 
 
@@ -349,7 +368,7 @@ createBrick:
 
 	push	r12
 	push	r13
-	mov.w	#8, R14 ;this will hold the counter.
+	mov.w	#8, counter ;this will hold the counter.
 
 	mov		r10, r12
 	mov		r11, r13
@@ -359,7 +378,7 @@ makingLines:
 	mov		#NOKIA_DATA, r12
 	mov		#0xFF, r13
 	call	#writeNokiaByte
-	dec		R14
+	dec		counter
 	jnz		makingLines
 	;check if you're at zero.
 	pop		r13
