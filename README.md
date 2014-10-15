@@ -305,9 +305,11 @@ The code for this functionality can be seen [here](https://raw.githubusercontent
 A screenshot of the code in action is shown below: 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/One%20Brick.JPG "Required Functionality")
 
+A video demonstration for required functionality can be seen [here](https://drive.google.com/file/d/0Bymb7kjtbzuqVmNRRFdWYXNPSU0/view?usp=sharing).
+
 ##A Functionality
 This moves the 8-pixel block one block in the direction of the pressed button (up, down, left, right).  The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/A%20Functionality.txt).
-
+A video demonstration for A functionality can be seen [here](https://drive.google.com/file/d/0Bymb7kjtbzuqVmNRRFdWYXNPSU0/view?usp=sharing).
  
 #Documentation: 
 ###Prelab: 
