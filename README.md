@@ -287,7 +287,7 @@ After the SW3 button was analyzed, the RESET signal was.  To do this the trigger
 A screenshot was then taken of from farther out so that the time the reset was actively low could be measured.  
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Reset%20Measure.JPG "Reset up Close")
 
-As evident from the screenshot above, the reset signal was low for about 18.64us.  
+As evident from the screenshot above, the reset signal was low for about 18.64us.  It is hard to tell but at the M2 marker is when the reset signal changes.  It happens so quickly, compared to the length of time recorded, that its change can hardly be seen without zooming in.  That is the reason for the first picture.  
 
 ##Writing Modes
 The operations AND, OR, and XOR were done on the images below.  A black square is a 1 and a blank square is a zero. When an image is compared with another image using one of the three operations just mentioned, each corresponding bit undergoes the same operation.  The result is then stored in a corresponding chart on a third grid.  
