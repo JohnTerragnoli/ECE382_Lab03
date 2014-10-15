@@ -308,7 +308,7 @@ A screenshot of the code in action is shown below:
 ##A Functionality
 This moves the 8-pixel block one block in the direction of the pressed button (up, down, left, right).  The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/A%20Functionality.txt).
 
-
+ 
 #Documentation: 
 ###Prelab: 
 We all helped each other understand the concepts in the homework Sunday night.  
