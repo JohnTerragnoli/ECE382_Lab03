@@ -334,6 +334,9 @@ The operations AND, OR, and XOR were done on the images below.  A black square i
 
 #Functionality
 ##Required Functionality
+
+###Process: 
+To do this, I first had to be able to draw a straight line on the Nokia.  The code showing this is [here]().  
 This creates a block on the LCD that is 8x8 pixels.  The location of the block is passed into the subroutine via r12 and r13.
 
 The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Basic%20Functionality.asm)
