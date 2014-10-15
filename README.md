@@ -256,20 +256,28 @@ Also, it was know that the least/most significant nibbles had to be used for the
 
 The waveform from the logic analyzer can be seen below.  This was attained from running Dr. Coulston's code and clicking "single run" while the SW3 button was hit and released.  This was done for a rising edge on the clock. The total four packets of information can be seen in the picture below:  
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Overall%204%20packets.JPG "SW3 Pressed")
+Notice: the CS signal was not show as it is intuitive.  Information may only be sent to the Nokia while the signal is low.  Therefore, the CS signal was low when the information was being sent in the packets.  
+
 
 The four packets are then zoomed in on below: 
 
 ###Packet 1
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%201.JPG "Packet 1")
+The analyzation of the data must be focused on the packet.  The MOSI signal is responsive to rising edges.  This means that the MOSI signal will only send information on the rising edge of a clock.  During the packet of information, the bits that are send through the MOSI were 1110 0111.  This is equivalent to 0xE7, which is the value predicted in the table above!!!
 
 ###Packet 2
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%202.JPG "Packet 2")
+Information sent is 1011 0001.  This translates to 0xB1.  Oddly enough, this is not the value that was predicted, it was one off.  It is very close however, and could be because of sign conventions or something like that.  
+
 
 ###Packet 3
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%203.JPG "Packet 3")
+The information sent in the packet is 0001 0000, which translates to 0x10, the exact value predicted in the table above.  
+
 
 ###Packet 4
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%204.JPG "Packet 4")
+The information sent in the pack is 0000 0001. This is not 0x0F.  However, since the most significant nibble is used to keep track of the columns, this value does not play much significance.  
 
 
 
