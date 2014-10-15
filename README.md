@@ -232,12 +232,14 @@ Complete the table below. To answer this question you will have to use some comm
 
 Complete the following table by finding the 4 calls to writeNokiaByte that generate the data sent to the LCD display to draw the veritcal bar.  
 
+###Four Calls to writeNokiaByte:
+
 |Number|Line|R12|R13|Purpose|
 |---|---|---|---|---|
-|1|66|setting the command|nothing|getting a new input|
-|2|276|clearing the command|nothing|getting a new input|
-|3|288|nothing|setting the positive edge of the clock|getting a new input|
-|4|294|nothing|clearing the negative edge of the clock|making the low of the clock wave|
+|1|66|NOKIA_DATA|0xE7 (11100111)|makes the dotted line for the LCD|
+|2|276|NOKIA_CMD|0xB0|setting row (least significant nibble|
+|3|288|NOKIA_CMD|0x10|setting column, least significant nibble is second part of address|
+|4|294|NOKIA_CMD|0x0F|setting column, most significant nibble is first part of address|
 
 
 *Getting Started*
