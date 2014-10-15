@@ -254,10 +254,26 @@ Also, it was know that the least/most significant nibbles had to be used for the
 |288|COMMAND|0x10|
 |294|COMMAND|0x0F|
 
-The waveform from the logic analyzer can be seen below.  This was attained from running Dr. Coulston's code and clicking "single run" while the SW3 button was hit and released.  This was done for a rising edge, even though this information was not displayed on the screen.  
-![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Plain%20Screenshot.JPG "Plain Screenshot")
+The waveform from the logic analyzer can be seen below.  This was attained from running Dr. Coulston's code and clicking "single run" while the SW3 button was hit and released.  This was done for a rising edge on the clock. The total four packets of information can be seen in the picture below:  
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Overall%204%20packets.JPG "SW3 Pressed")
 
-The data signal "My Bus 1[0]" is exactly the same as in the example.  
+The four packets are then zoomed in on below: 
+
+###Packet 1
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%201.JPG "Packet 1")
+
+###Packet 2
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%202.JPG "Packet 2")
+
+###Packet 3
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%203.JPG "Packet 3")
+
+###Packet 4
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%204.JPG "Packet 4")
+
+
+
+
 
 After this was done, the RESET signal was added and the reset button was hit.  To hook up the RESET signal, the third pin was attached to in P2.0.  This is because the reset signal is attached to this pin, as seen on the Nokia data sheet [here](http://www.ece382.com/datasheets/Nokia_1202_LCD_BoosterPack_v4-5.pdf).  The trigger for the reset signal was set to active low.  This waveform can be shown below: 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/With%20Reset.JPG "Writing Mode Answers")
