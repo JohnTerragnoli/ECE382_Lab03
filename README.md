@@ -282,6 +282,7 @@ The information sent in the pack is 0000 0001. This is not 0x0F.  However, since
 
 ##SW3 Logic Waveforms
 This compiles the values show in the data packets shown above:
+
 |Line|Command/Data|8-bit Packet|
 |---|---|---|
 |66|DATA|0xE7|
