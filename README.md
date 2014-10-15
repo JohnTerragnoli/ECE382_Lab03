@@ -340,7 +340,13 @@ To do this, I first had to be able to draw a straight line on the Nokia.  The co
 
 After this was done, the code above was complied to make an [entire box](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Basic%20Functionality.asm).  
 
-The largest problem I had with creating the box was to keep it from moving around whenever I pressed the SW3 button and also to get it to come up automatically.  For some reason, I had numberous failures, one of which created this cool checkered pattern. [code](https://drive.google.com/file/d/0Bymb7kjtbzuqekFzMFBraWt3dk0/view?usp=sharing) [picture](https://drive.google.com/file/d/0Bymb7kjtbzuqYVpEZF9aemgtanc/view?usp=sharing)
+This was done with a simple loop that drew lines next to each other.  The column address just needed to be incremented each time a lines was drawn.  There were no bugs in this transition.  
+
+The largest problem I had with creating the box was to keep it from moving around whenever I pressed the SW3 button and also to get it to come up automatically.  For some reason, I had numberous failures, one of which created this cool checkered pattern. [code](https://drive.google.com/file/d/0Bymb7kjtbzuqekFzMFBraWt3dk0/view?usp=sharing) [picture](https://drive.google.com/file/d/0Bymb7kjtbzuqYVpEZF9aemgtanc/view?usp=sharing).  
+
+What I eventually did to fix this problem was to delete the while0 and while1 loops, since I was not waiting for an SW3 input anyway.  Once I deleted these things, the box actually stopped moving and I did not have to worry about getting a case of the checkers again.  
+
+Below is the final result of my toils for basic functionality:
 
 
 This creates a block on the LCD that is 8x8 pixels.  The location of the block is passed into the subroutine via r12 and r13.
@@ -351,7 +357,7 @@ The code for this functionality can be seen [here](https://raw.githubusercontent
 A screenshot of the code in action is shown below: 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/One%20Brick.JPG "Required Functionality")
 
-A video demonstration for required functionality can be seen [here](https://drive.google.com/file/d/0Bymb7kjtbzuqVmNRRFdWYXNPSU0/view?usp=sharing).
+This is a [video](https://drive.google.com/file/d/0Bymb7kjtbzuqVmNRRFdWYXNPSU0/view?usp=sharing) demonstration for required functionality.  
 
 ##A Functionality
 This moves the 8-pixel block one block in the direction of the pressed button (up, down, left, right).  The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/A%20Functionality.txt).
