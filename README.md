@@ -293,7 +293,8 @@ This compiles the values show in the data packets shown above:
 **Why are these values different?** (than those in the second table above?
 1. For line 66, the data sent was exactly as expected!!
 2. The second packet of information is supposed to hold the row of where we will write to the LCD.  More specifically, the most significant nibble is the a masking function, which is ignored for now, and the least significant nibble contains the row address.  This can be seen in the table form the datasheet below these responses.  Anyway, the location 1 most likely was sent because the row the computer was writing to at that time was 0001, not 0000.  Either way, this output makes sense.  
-3. The 
+3. The  address for the third lines was correct :)
+4. For the fourth lines, the packet of information was nothing like expected.  At least at first.  What I did in the prediction was copy down a line of code that was not actually being sent to the Nokia.  Instead, the value 0x0F was being ANDed with whatever value was almost sent to the Nokia.  Looking at the second table below, this makes sense, because all column addresses must start with 0000
 
 
 
