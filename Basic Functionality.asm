@@ -5,6 +5,11 @@
 ;	Draw a new vertical bar on the Nokia 1202 display everytime that SW3
 ;	is pressed and released.
 ;-------------------------------------------------------------------------------
+;	Edited by John Paul Terragnoli
+;	15 October 2014
+;	MSP430G2553
+;	Draws an 8 by 8 block on the LCD screen.
+;-------------------------------------------------------------------------------
 	.cdecls C,LIST,"msp430.h"		; BOILERPLATE	Include device header file
 
 
@@ -56,10 +61,13 @@ main:
 	call	#createBrick
 
 
+;;started building createBrick, and then realized that I overlapped
+;with while1 and while0.  I just commented them out to make things easier.
 
-while1:
-	bit.b	#8, &P2IN					; bit 3 of P1IN set?
-	jnz 	while1						; Yes, branch back and wait
+
+;while1:
+;	bit.b	#8, &P2IN					; bit 3 of P1IN set?
+;	jnz 	while1						; Yes, branch back and wait
 
 
 
@@ -81,27 +89,6 @@ while1:
 ;	call	#setAddress					; we draw
 ;
 ;	jmp		while1
-
-
-
-
-
-
-
-
-;these are for any buttons!!!!!
-
-;buttonDown:
-;	bit.b	r9, &P2IN
-;	jz		buttonDown
-;
-;buttonUp:
-;	mov		r10, r12
-;	mov		r11, r13
-;	call	#clearDisplay
-;	call	#setAddress
-;	call	#creatBrick
-;	jmp
 
 
 

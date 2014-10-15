@@ -73,6 +73,8 @@ main:
 
 
 
+;constantly cycle through these four loops to check if the four buttons are pressed.
+
 ;RESPONDS THE UP BUTTON
 moveUp:
 	bit.b	#UPCHECK, &P2IN  ;this is a comparer to check what the number is coming into P2IN
@@ -117,9 +119,9 @@ buttonDown:
 	jz		buttonDown
 
 buttonUp:
-	mov		r10, r12
+	mov		r10, r12;utilizing r12 and r13 to make the picture on the screen.
 	mov		r11, r13
-	call	#clearDisplay
+	call	#clearDisplay		;these methods are necessary to produce an image on the LCD screen the way the program was desined to do.
 	call	#setAddress
 	call	#createBrick
 	jmp		moveUp
