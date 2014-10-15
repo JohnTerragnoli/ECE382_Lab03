@@ -236,46 +236,23 @@ Complete the following table by finding the 4 calls to writeNokiaByte that gener
 
 |Number|Line|R12|R13|Purpose|
 |---|---|---|---|---|
-|1|66|NOKIA_DATA|0xE7|makes the dotted line for the LCD|
-|2|276|NOKIA_CMD|0xB0|setting row (least significant nibble|
-|3|288|NOKIA_CMD|0x10|setting column, least significant nibble is second part of address|
-|4|294|NOKIA_CMD|0x0F|setting column, most significant nibble is first part of address|
+|1|66|NOKIA_DATA (0x0001)|0xE7|makes the dotted line for the LCD|
+|2|276|NOKIA_CMD (0x0000)|0xB0|setting row (least significant nibble|
+|3|288|NOKIA_CMD (0x0000)|0x10|setting column, least significant nibble is second part of address|
+|4|294|NOKIA_CMD (0x0000)|0x0F|setting column, most significant nibble is first part of address|
 
+For this part, it seemed that the most important information to be sent was if the pixles were lit or not, and where they were on the screen.  Additionally, the data that stores the current column must be longer than what keeps track of the rows because the screen is longer than it is tall.  
 
-*Getting Started*
-First, to do this, each of the subroutines were examined for their ultimate purpose.
-1. Init: 
--Sets up a fast clock.  
--Sets the inputs and the outputs.
--makes the reset pin an output
--ensures pull up resistors
--
-
-2. InitNokia
--allows the screen to turn on? 
-3. Clear Display
-
-4. Set Address
--sets the address of where we're writing to. 
-
-5. writeNokiaByte
--enables the I/O function by clearing. 
--writes the new command to the Nokia, sends it through the MSP430 output. 
--also outputs the clock to the Nokia
-
-The subroutines above were the most important to understand for this section of the lab.  
-
-*Thought Process*
-1.   
+Also, it was know that the least/most significant nibbles had to be used for these addresses because the drawing clearly started at 0,0 when the code was implemented.  
 
 
 ##SW3 Logic Waveforms
 |Line|Command/Data|8-bit Packet|
 |---|---|---|
-||||
-||||
-||||
-||||
+|66|DATA|0xE7|
+|276|COMMAND|0xB0|
+|288|COMMAND|0x10|
+|294|COMMAND|0x0F|
 
 The waveform from the logic analyzer can be seen below.  This was attained from running Dr. Coulston's code and clicking "single run" while the SW3 button was hit and released.  This was done for a rising edge, even though this information was not displayed on the screen.  
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Plain%20Screenshot.JPG "Plain Screenshot")
