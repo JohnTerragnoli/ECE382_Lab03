@@ -336,7 +336,13 @@ The operations AND, OR, and XOR were done on the images below.  A black square i
 ##Required Functionality
 
 ###Process: 
-To do this, I first had to be able to draw a straight line on the Nokia.  The code showing this is [here]().  
+To do this, I first had to be able to draw a straight line on the Nokia.  The code showing this is [here](https://drive.google.com/file/d/0Bymb7kjtbzuqRV9VRDZ0QW5qMGs/view?usp=sharing).  
+
+After this was done, the code above was complied to make an [entire box](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Basic%20Functionality.asm).  
+
+The largest problem I had with creating the box was to keep it from moving around whenever I pressed the SW3 button and also to get it to come up automatically.  For some reason, I had numberous failures, one of which created this cool checkered pattern. [code](https://drive.google.com/file/d/0Bymb7kjtbzuqekFzMFBraWt3dk0/view?usp=sharing) [picture](https://drive.google.com/file/d/0Bymb7kjtbzuqYVpEZF9aemgtanc/view?usp=sharing)
+
+
 This creates a block on the LCD that is 8x8 pixels.  The location of the block is passed into the subroutine via r12 and r13.
 
 The code for this functionality can be seen [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Basic%20Functionality.asm)
