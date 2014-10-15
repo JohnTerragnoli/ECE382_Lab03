@@ -259,7 +259,7 @@ The waveform from the logic analyzer can be seen below.  This was attained from 
 Notice: the CS signal was not show as it is intuitive.  Information may only be sent to the Nokia while the signal is low.  Therefore, the CS signal was low when the information was being sent in the packets.  
 
 
-The four packets are then zoomed in on below: 
+The four packets are then zoomed in on below.  For each of them, the left red circle surrounds the command/data bit and the right circle surrounds the 8 data bits, as specified in the table above.  
 
 ###Packet 1
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Packet%201.JPG "Packet 1")
