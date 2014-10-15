@@ -216,6 +216,7 @@ Complete the table below. To answer this question you will have to use some comm
 (looked up these values on page 41 of STE2007)
 
 |Symbolic Constant|	Hex	|Function|
+|---|---|---|
 |#STE2007_RESET|	E2	|Internal Reset|
 |#STE2007_DISPLAYALLPOINTSOFF|	A4|	LCDdisplay, normal display|
 |#STE2007_POWERCONTROL|	Blank|	Sets the on–chip power supply circuit operating mode|
