@@ -281,12 +281,13 @@ The information sent in the pack is 0000 0001. This is not 0x0F.  However, since
 
 
 
+After the SW3 button was analyzed, the RESET signal was.  To do this the trigger for RESET was changed to falling edge and the trigger for the clock was changed to "don't care".  This is because the reset button is an active low.  A close up of the screenshot is shown below: 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Reset%20Close%20Up.JPG "Reset up Close")
 
+A screenshot was then taken of from farther out so that the time the reset was actively low could be measured.  
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/Reset%20Measure.JPG "Reset up Close")
 
-After this was done, the RESET signal was added and the reset button was hit.  To hook up the RESET signal, the third pin was attached to in P2.0.  This is because the reset signal is attached to this pin, as seen on the Nokia data sheet [here](http://www.ece382.com/datasheets/Nokia_1202_LCD_BoosterPack_v4-5.pdf).  The trigger for the reset signal was set to active low.  This waveform can be shown below: 
-![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE382_Lab03/master/With%20Reset.JPG "Writing Mode Answers")
-
-There should be change, or edge when this is done.  The length of time that the active low was then held down is measured.  
+As evident from the screenshot above, the reset signal was low for about 18.64us.  
 
 ##Writing Modes
 The operations AND, OR, and XOR were done on the images below.  A black square is a 1 and a blank square is a zero. When an image is compared with another image using one of the three operations just mentioned, each corresponding bit undergoes the same operation.  The result is then stored in a corresponding chart on a third grid.  
